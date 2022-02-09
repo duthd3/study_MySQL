@@ -73,3 +73,32 @@ SELECT 열_이름
 ### Having 절
 - WHERE절 대신에 사용한다.(집계 함수에 대해서 조건을 제한하는 것.)
 - 무조건 GROUP BY 절 다음에 나와야 한다.
+
+# 03-3 데이터 변경을 위한 SQL 문
+- INSERT:새로운 데이터 입력
+- UPDATE:기존 데이터 변경
+- DELETE:기존 데이터 삭제
+## 데이터 입력:INSERT
+### INSERT 문의 기본 문법
+```sql
+INSERT INTO 테이블 [(열1, 열2, ...)] VALUES (값1, 값2, ...)
+```
+### 자동으로 증가하는 AUTO_INCREMENT
+- AUTO_INCREMENT는 열을 정의할 때 1부터 증가하는 값을 입력한다.
+- AUTO_INCREMENT로 지정하는 열은 꼭 PRIMARY KEY로 지정해야 한다.
+### 다른 테이블의 데이터를 한 번에 입력하는 INSERT INTO ~ SELELCT
+```sql
+INSERT INTO 테이블_이름(열_이름1, 열_이름2, ...)
+  SELECT문;
+```
+
+## 데이터 수정:UPDATE
+### UPDATE 문의 기본 문법
+```sql
+UPDATE 테이블_이름
+   SET 열1=값1, 열2=값2, ...
+   WHERE 조건;
+```
+
+## 데이터 
+    
