@@ -100,5 +100,7 @@ UPDATE 테이블_이름
    WHERE 조건;
 ```
 
-## 데이터 
-    
+## 데이터 삭제:DELETE
+```sql
+DELETE FROM 테이블이름 WHERE 조건;
+```
