@@ -101,4 +101,47 @@ FROM <테이블> 별칭A
 ```
 
 # 04-3 SQL 프로그래밍
-- 스토어드 프로시저는 
+- 스토어드 프로시저는 MySQL에서 프로그래밍 기능이 필요할 때 사용하는 데이터베이스 개체이다.
+- SQL 프로그래밍은 기본적으로 스토어드 프로시저 안에 만들어야 한다.
+```sql
+DELIMITER $$
+CREATE PROCEDURE 스토어드_프로시저_이름()
+BEGIN
+  이 부분에 SQL 프로그래밍 코딩
+END $$
+DELIMITER ;
+CALL 스토어드_프로시저_이름();
+```
+
+## IF 문
+```sql
+IF <조건식> THEN
+    SQL 문장들
+END IF;
+```
+- SQL 문장들이 한 문장이라면 그 문장만 써도 되지만, 두 문장 이상이 처리되어야 할 때는 BEGIN~END로 묶어줘야 한다.
+## IF~ELSE 문
+- 조거에 따라 다른 부분을 수행한다.
+
+## CASE 문
+```sql
+CASE
+  WHEN 조건1 THEN
+    SQL문장들1
+  WHEN 조건2 THEN
+    SQL문장들2
+  ELSE
+    SQL문장들3
+END CASE;
+```
+## WHILE 문
+```sql
+WHILE <조건식> DO
+  SQL 문장들
+END WHILE;
+```
+
+## 동적 SQL
+### PREPARE 와 EXECUTE
+- PREPARE는 SQL문을 실행하지는 않고 미리 준비만 한다.
+- EXECUTE는 준비한 SQL문을 실행한다.
